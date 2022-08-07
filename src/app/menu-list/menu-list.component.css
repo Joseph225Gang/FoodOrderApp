@@ -1,0 +1,40 @@
+.menu{
+    position: relative;
+    left: 150px;
+}
+
+mat-grid-tile{
+    border: 1px solid black;
+    border-radius: 1em;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.main-dish-name{
+    position: relative; 
+    top:5px;
+}
+
+.price-tag{
+    position: relative; 
+    top: -5px;
+}
+
+.beverage-dessert-name{
+    position: relative; 
+    top:20px;
+}
+
+.beverage-dessert-price{
+    position: relative; 
+    top:-15px;
+}
+
+h1{
+    position: relative;
+    left:25%;
+}
+
+h3{
+    padding-top: 8px;
+}

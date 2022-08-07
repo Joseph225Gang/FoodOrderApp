@@ -1,0 +1,66 @@
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark" style="height:75px;">
+  <a class="navbar-brand" href="#" style="padding-left: 15px;color:yellow;">菜單</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width:100%;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="position: relative; left:1080px;">
+        <a class="nav-link" [routerLink]="['/login']" style="color:white;">登入</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<h1 class="menu">主菜</h1>
+<mat-grid-list cols="3" rowHeight="125px" gutterSize="15px">
+    <mat-grid-tile 
+      style='background-image:url("{{main_dish.imageUrl}}");
+      background-repeat: no-repeat;
+      background-size: contain;'
+      *ngFor="let main_dish of mainDishList"
+      (click)="printMenu(main_dish)"
+      >
+    <mat-card-content>
+      <h3 class="main-dish-name">{{main_dish.name}}</h3>
+      <h3 class="price-tag">${{main_dish.price}}</h3>
+  </mat-card-content>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<br>
+<h1 class="menu">飲料</h1>
+<mat-grid-list cols="3" rowHeight="125px" gutterSize="15px">
+    <mat-grid-tile
+      style='background-image:url("{{beverage.imageUrl}}");
+      background-repeat: no-repeat;
+      background-size: contain;'
+      *ngFor="let beverage of beverageList"
+      >
+  <mat-card-content>
+    <h3 class="beverage-dessert-name">{{beverage.name}}</h3>&nbsp;
+    <h3 class="beverage-dessert-price">${{beverage.price}}</h3>
+  </mat-card-content>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<br>
+<h1 class="menu">點心</h1>
+<mat-grid-list cols="3" rowHeight="125px" gutterSize="15px">
+    <mat-grid-tile
+      *ngFor="let dessert of dessertList"
+      style='background-image:url("{{dessert.imageUrl}}");
+      background-repeat: no-repeat;
+      background-size: contain;'
+      >
+    <mat-card-content>
+      <h3 class="beverage-dessert-name">{{dessert.name}}</h3>&nbsp;
+      <h3 class="beverage-dessert-price">${{dessert.price}}</h3>
+  </mat-card-content>
+  </mat-grid-tile>
+</mat-grid-list>
+<br>
+<br>
+<router-outlet></router-outlet>
